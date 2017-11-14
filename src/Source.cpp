@@ -358,10 +358,16 @@ void runProgram(){
         dance round = dance();
         for (int j = 0; j < NUM_COUPLES_IN_DANCE; j++){
             lead* chosenLead = pickLead();
+            cout << "DEBUG: LEAD:   " << chosenLead->name << endl;
+
             follow* chosenFollow = pickFollowForLead(chosenLead);
+            cout << "DEBUG: FOLLOW: " << chosenFollow->name << endl;
+
             chosenLead->follows_danced_with.push_back(chosenFollow->name);
             couple pair = couple(chosenLead, chosenFollow);
-            //pair.print();
+
+            cout << "DEBUG: PAIR:   ";
+            pair.print();
 
             round.couples.push_back(pair);
         }
