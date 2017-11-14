@@ -9,4 +9,4 @@ main: $(OBJS)
 	$(CXX) -c $(^) -o $(@) $(SYSLIBS) 
 
 clean:
-	rm main *.o
+	rm main
