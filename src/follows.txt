@@ -11,11 +11,8 @@ Julia 1
 Kathleen 3
 Liz 1
 Maggie 1
-Megan 1
 Olivia 3
 Sam 2
 Sun 2
 Taylor 1
 Victoria 1
-ExtraFollow1 2
-ExtraFollow2 2

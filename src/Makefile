@@ -1,4 +1,4 @@
-CXX=g++ -std=c++11
+CXX=g++ -std=c++11 -ggdb3
 OBJS=couple.cpp dance.cpp follow.cpp lead.cpp
 SYSLIBS=
 

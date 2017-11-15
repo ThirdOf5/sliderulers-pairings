@@ -16,6 +16,3 @@ Robbie 3
 Tanner 3
 Tyler 1
 Arthur 1
-ExtraLead1 2
-ExtraLead2 2
-ExtraLead3 2
