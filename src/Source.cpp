@@ -10,7 +10,7 @@
 
 using namespace std;
 
-const int TIMES_TO_DANCE = 2;
+const int TIMES_TO_DANCE = 5;
 const int NUM_COUPLES_IN_DANCE = 3;
 vector<bool> which_leads_tried;
 vector<bool> which_follows_tried;
@@ -180,7 +180,8 @@ follow* pickFollowForLead(lead* dude){
     }
     else{
         //try again
-        which_follows_tried[seed] = true;
+        which_follows_tried[seed] = true; // TODO the issue is here?
+        ++follows_tried;
         if (follows_tried != follows.size()){
             for (int i = 0; i < which_follows_tried.size(); i++){
                 if (which_follows_tried[i] == false){
@@ -358,16 +359,14 @@ void runProgram(){
         dance round = dance();
         for (int j = 0; j < NUM_COUPLES_IN_DANCE; j++){
             lead* chosenLead = pickLead();
-            cout << "DEBUG: LEAD:   " << chosenLead->name << endl;
+            //cout << "DEBUG: LEAD:   " << chosenLead->name << endl;
 
             follow* chosenFollow = pickFollowForLead(chosenLead);
-            cout << "DEBUG: FOLLOW: " << chosenFollow->name << endl;
+            //cout << "DEBUG: FOLLOW: " << chosenFollow->name << endl;
 
             chosenLead->follows_danced_with.push_back(chosenFollow->name);
             couple pair = couple(chosenLead, chosenFollow);
-
-            cout << "DEBUG: PAIR:   ";
-            pair.print();
+            //cout << "DEBUG: PAIR:   " << pair.print();
 
             round.couples.push_back(pair);
         }
